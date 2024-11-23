@@ -1,0 +1,264 @@
+/* Основен стил за приложението */
+.App {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Заглавие на приложението */
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Контейнер за всички компоненти */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Контейнер за шахматната дъска */
+.chessboard-container {
+  border: 3px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Стилове за дъската */
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 1px;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+/* Стилове за всяко квадратче на дъската */
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.white {
+  background-color: #f0d9b5; /* Светъл цвят за белите квадратчета */
+}
+
+.black {
+  background-color: #b58863; /* Тъмен цвят за черните квадратчета */
+}
+
+/* Стилове за фигурите */
+.piece {
+  font-size: 2rem;
+}
+
+.piece.r,
+.piece.n,
+.piece.b,
+.piece.q,
+.piece.k,
+.piece.p {
+  color: black;
+}
+
+.piece.R,
+.piece.N,
+.piece.B,
+.piece.Q,
+.piece.K,
+.piece.P {
+  color: white;
+}
+
+/* Контейнер за информация за играча */
+.player-info {
+  width: 250px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилове за състоянието на играта */
+.game-status {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.game-status.in-progress {
+  background-color: #ffdd57;
+  color: #333;
+}
+
+.game-status.finished {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.game-status.paused {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Стилове за бутоните */
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Стилове за слайдъри или бутони за промяна на трудност */
+.difficulty-selector {
+  padding: 15px;
+  background-color: #fff;
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер за контроли (пауза, рестарт, и т.н.) */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Таймер */
+.game-timer {
+  width: 180px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Индикатор на хода */
+.turn-indicator {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.turn-indicator.white {
+  color: #007bff;
+}
+
+.turn-indicator.black {
+  color: #343a40;
+}
+
+/* История на ходовете */
+.move-history {
+  width: 250px;
+  height: 350px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Погълнатите фигури */
+.captured-pieces {
+  width: 250px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилове за иконите на звука */
+.sound-toggle {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+/* Подравняване на компонентите по хоризонтала */
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 1px;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 60px;
+  width: 60px;
+  transition: background-color 0.3s ease;
+}
+
+.white {
+  background-color: #f0d9b5;
+}
+
+.black {
+  background-color: #b58863;
+}
+
+.square i {
+  font-size: 2.5rem; /* Това ще увеличи иконите */
+}
